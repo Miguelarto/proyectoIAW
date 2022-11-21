@@ -12,7 +12,7 @@
         if(isset($_SESSION['logged'])){
             
             echo "<p>Bienvenido a tu area personal ".$_SESSION['nombre']."</p>";
-            
+            echo "<p>Tu id de usuario es" .$_SESSION['id']."</p>";
             
         }else{
             // Muestro el acceso a la sección de usuario

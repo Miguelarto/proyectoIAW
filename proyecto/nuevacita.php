@@ -13,7 +13,7 @@ if (isset($error)){
 $hora = $_REQUEST["hora"];
 $idUsuario = $_SESSION['id'];
 include 'bbdd.php';    
-$sql = "insert into citas (idProfesional, idUsuario, fecha, Comentarios, fechaCreación) values ( 1, '$idUsuario', '$hora', now(), now())";
+$sql = "insert into citas (idProfesional, idUsuario, fecha, Comentarios, fechaCreación) values ( 1, '3', '$hora', now(), now())";
 $conn->query($sql);
 $conn->close();
 Header("Location: Usuario.php");
