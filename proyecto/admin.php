@@ -20,7 +20,7 @@
         }
      
     ?>
-     <table class="table">
+     <table border="1" class="table">
         <th>Citas</th>
         <th>idcita</th>
         <th>idProfesional</th>
@@ -30,15 +30,20 @@
       <?php include 'readadmin.php'; ?>
     </tbody>
     </table>
-    <table class="table">
+    <table border="1" class="table">
         <th>Usuarios</th>
         <th>id</th>
     <tbody>
       <?php include 'readadminuser.php'; ?>
+ <table border="1" class="table">
+        <th>Profesional</th>
+        <th>id</th>
+    <tbody>
+      <?php include 'readadminpro.php'; ?>
     </tbody>
     </table>
-
-    
+<br><br>
+    <a href="nuevopro.php">Añadir nuevo profesional</a>
     <br><br>
     <a href="cerrarSesion.php">Cerrar Sesión</a>
     </body>

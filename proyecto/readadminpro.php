@@ -1,7 +1,7 @@
 <?php
   include 'bbdd.php';  
   $idusuario = $_SESSION['id'];
-  $sql = "select * from usuarios ";
+  $sql = "select * from trabajadores ";
   $result = $conn->query($sql);
   while($row = $result->fetch_assoc()) {
     echo "<tr>";
@@ -17,9 +17,7 @@
       echo "<td>" . $row['id'] . "</td>";
      
     }
-    echo '<td><a class="btn btn-danger" href="deleteuser.php?id=' . $row['id'] . '" role="button">Eliminar usuario</a></td>';
-    echo "</tr>";
-    echo '<td><a class="btn btn-danger" href="pass.php?id=' . $row['id'] . '" role="button">Restablecer contraseña</a></td>';
+    echo '<td><a class="btn btn-danger" href="deletepro.php?id=' . $row['id'] . '" role="button">Eliminar profesional</a></td>';
     echo "</tr>";
   }
   $conn->close();

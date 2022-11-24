@@ -20,7 +20,7 @@
         }
      
     ?>
-     <table class="table">
+     <table border="1" class="table">
     <tbody>
       <?php include 'read.php'; ?>
     </tbody>
