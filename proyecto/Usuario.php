@@ -12,7 +12,7 @@
         if(isset($_SESSION['logged'])){
             
             echo "<p>Bienvenido a tu area personal ".$_SESSION['nombre']."</p>";
-            echo "<p>Tu id de usuario es" .$_SESSION['id']."</p>";
+           
             
         }else{
             // Muestro el acceso a la sección de usuario
@@ -30,11 +30,25 @@
 <form action="nuevacita.php" method="get">
   <label ford="">Fecha: </label>
   <input type="datetime-local" name="hora">
+  <label ford="">Profesional: </label>
+  <select name="idpro">
+        <option value="0">Seleccione:</option>
+        <?php
+        include 'bbdd.php';  
+          $sql ="SELECT id,nombre FROM trabajadores";
+          $result = $conn->query($sql);
+          
+          while ($row = $result -> fetch_assoc()) {
+            echo '<option value="'.$row['id'].'">'.$row['nombre'].'</option>';
+          }
+        ?>
+      </select>
+  
   <input type="submit"/>
 </form>
+<br>
+<br>
+<a href="cerrarSesion.php">Cerrar Sesión</a>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

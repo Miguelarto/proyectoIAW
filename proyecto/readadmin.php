@@ -1,7 +1,7 @@
 <?php
   include 'bbdd.php';  
   $idusuario = $_SESSION['id'];
-  $sql = "select * from citas where idUsuario = '$idusuario' ";
+  $sql = "select fecha, id, idProfesional, idUsuario from citas order by idProfesional ";
   $result = $conn->query($sql);
   while($row = $result->fetch_assoc()) {
     echo "<tr>";
@@ -14,7 +14,10 @@
       echo '</form>';
     } else {
       echo "<td>" . $row['fecha'] . "</td>";
+      echo "<td>" . $row['id'] . "</td>";
+      echo "<td>" . $row['idProfesional'] . "</td>";
       echo "<td>" . $row['idUsuario'] . "</td>";
+      
      
     }
     echo '<td><a class="btn btn-danger" href="delete.php?id=' . $row['id'] . '" role="button">Cancelar cita</a></td>';

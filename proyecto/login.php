@@ -14,8 +14,8 @@
     ?>
     <form action="loginValidator.php" method="get">
         <div>
-            <label for="nombre">Usuario: </label>
-            <input type="text" id="nombre" name="nombre" />
+            <label for="email">Email de usuario: </label>
+            <input type="text" id="email" name="email" />
         </div>
         <div>
             <label for="pass">Contraseña: </label>

@@ -10,11 +10,27 @@ if (isset($error)){
     Header("Location: Usuario.php");
     echo $error;
 }else{
-$hora = $_REQUEST["hora"];
-$idUsuario = $_SESSION['id'];
-include 'bbdd.php';    
-$sql = "insert into citas (idProfesional, idUsuario, fecha, Comentarios, fechaCreación) values ( 1, '3', '$hora', now(), now())";
-$conn->query($sql);
-$conn->close();
-Header("Location: Usuario.php");
+
+    $hoy = date("Y-m-d");
+    $fechaFormulario = $_REQUEST["hora"];
+    if ($hoy <= $fechaFormulario) {
+        $hora = $_REQUEST["hora"];
+        $nombre = $_SESSION['nombre'];
+        $idusuario = $_SESSION['id'];
+        $idpro = $_REQUEST['idpro'];
+        include 'bbdd.php';
+        $sql = "insert into citas (idProfesional, idUsuario, fecha, Comentarios, fechaCreación) values ( '$idpro', '$idusuario', '$hora', now(), now())";
+        $conn->query($sql);
+        $conn->close();
+        Header("Location: Usuario.php");
+    
+          }
+   
+
+else {
+    
+    echo "Fecha no valida";
+    Header("Location: Usuario.php");
+
+}
 }
